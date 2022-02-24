@@ -5,7 +5,8 @@ set(CMAKE_BUILD_TYPE "Release")
 set(CMAKE_CXX_FLAGS "-std=c++17 -O2")
 
 # Eigen
-include_directories("/home/tusimple/.tspkg/include/eigen3")
+find_package(Eigen3 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
 
 # 寻找OpenCV库
 find_package(OpenCV REQUIRED)
